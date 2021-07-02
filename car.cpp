@@ -22,6 +22,25 @@ void car::setCategory(string cat) {
 	this->category = cat;
 }
 
+bool car::isCarAttributes(string attribute) {
+	if (this->carModel == attribute)
+		return true;
+	else if (this->carMaker == attribute)
+		return true;
+	else if (this->carModel == attribute)
+		return true;
+	else if (to_string(this->carYear) == attribute)
+		return true;
+	//else
+}
+
+//void car::printCarInformation() {
+//	cout << "Make: " + carMaker + "\n";
+//	cout << "Model: " + carModel + "\n";
+//	cout << "Year: ";
+//	cout << carYear + "\n";
+//}
+
 void askUserForCarAttributesThatAreStrings(string maker,string model,string vinNum) {
 	cout << "Car make: ";
 	cin >> maker;

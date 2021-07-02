@@ -1,4 +1,6 @@
 #include<iostream>
+#include "newCar.h"
+#include "oldCar.h"
 using namespace std;
 
 int main(){
@@ -44,7 +46,10 @@ int askUserForOption() {
 	return option;
 }
 
-void searchCarInventoryByAttribute(vector <car>) {
+void searchCarInventoryByAttribute(string attribute) {
+	int searchWord;
+	cout << "Search(make, model, year): "; 
+	cin >> searchWord;
 }
 
 void sellCar() {
