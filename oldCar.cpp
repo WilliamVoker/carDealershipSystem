@@ -2,7 +2,14 @@
 
 oldCar::oldCar() {
 	this->carMileage = 0;
-	this->setCategory("old");
+}
+
+oldCar::oldCar(string model, string make, int mileage) {
+}
+
+void askUserForCarMileage(int cm) {
+	cout << "Car Mileage: ";
+	cin >> cm;
 }
 
 void oldCar::registerNonexistentCar() {
@@ -10,7 +17,6 @@ void oldCar::registerNonexistentCar() {
 	askUserForCarMileage(carMileage);
 }
 
-void askUserForCarMileage(int cm) {
-	cout << "Car Mileage: ";
-	cin >> cm;
+string oldCar:: setCategory() {
+	return "old";
 }

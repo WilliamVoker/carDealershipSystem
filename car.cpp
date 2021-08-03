@@ -1,45 +1,36 @@
 #include "car.h"
 
 car::car() {
-	this->carMaker = "none";
-	this->carModel = "none";
-	this->carPrice = 0;
-	this->carVinNum = "none";
-	this->carYear = 0;
-	this->category = "none";
+	this->maker = "";
+	this->model = "";
+	this->year = 1886;
+	this->vinNum = "";
+	this->price = 0;
+	this->category = "";
 }
 
 car::~car() {
 	delete this;
 }
 
+car::car(string make, string model, int year) {
+	this->maker = make;
+	this->model = model;
+	this->year = year;
+}
+
 void car::registerNonexistentCar() {
-	askUserForCarAttributesThatAreStrings(carMaker, carModel, carVinNum);
-	askUserForcarAttributesThatAreNumbers(carYear, carPrice);
+	askUserForCarAttributesThatAreStrings(maker, model, vinNum);
+	askUserForcarAttributesThatAreNumbers(year, price);
 }
 
-void car::setCategory(string cat) {
-	this->category = cat;
+void car::printCarInformation() {
+	const int COLMN1 = 10;
+	const int COLMN2 = 15;
+	cout << setw(COLMN2) << left << maker << setw(COLMN2) << left << model
+		<< setw(COLMN1) << left << year << setw(25) << left << vinNum << setw(COLMN1)
+		<< left << price << endl;
 }
-
-bool car::isCarAttributes(string attribute) {
-	if (this->carModel == attribute)
-		return true;
-	else if (this->carMaker == attribute)
-		return true;
-	else if (this->carModel == attribute)
-		return true;
-	else if (to_string(this->carYear) == attribute)
-		return true;
-	//else
-}
-
-//void car::printCarInformation() {
-//	cout << "Make: " + carMaker + "\n";
-//	cout << "Model: " + carModel + "\n";
-//	cout << "Year: ";
-//	cout << carYear + "\n";
-//}
 
 void askUserForCarAttributesThatAreStrings(string maker,string model,string vinNum) {
 	cout << "Car make: ";

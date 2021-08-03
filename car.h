@@ -6,21 +6,23 @@
 #include <vector> 
 #include <cstdlib> 
 #include <fstream> 
+#include <iomanip>
 using namespace std;
 
 class car {
 public:
 	car();
 	~car();
-	//car(string make, string model, int year);
+	car(string make, string model, int year);
 	void registerNonexistentCar();
-	void setCategory(string cat);
+	virtual string setCategory();
+	void printCarInformation();
 private:
-	string carMaker;
-	string carModel;
-	int carYear;
-	float carPrice;
-	string carVinNum;
+	string maker;
+	string model;
+	int year;
+	float price;
+	string vinNum;
 	string category;
 };
 #endif

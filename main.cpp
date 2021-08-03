@@ -1,9 +1,11 @@
-#include<iostream>
 #include "newCar.h"
 #include "oldCar.h"
 using namespace std;
 
 int main(){
+	vector <oldCar> oldCarInventory;
+	vector <newCar> newCarInventory;
+
 	//pullInventoryFromTextFile();
 
 	while (true) {
@@ -43,13 +45,31 @@ int askUserForOption() {
 	int option;
 	cout << "\nEnter an option(1-5): ";
 	cin >> option;
-	return option;
+
+	if(isValidOption())
+		return option;
+	else {
+		cout << "\nInvalid option. Please try again.\n";
+		askUserForOption;
+	}
 }
 
-void searchCarInventoryByAttribute(string attribute) {
+bool isValidOption() {
+	bool option;
+	if (option == 1 || option == 2 || option == 3 || option == 4 || option == 5)
+		return true;
+	else
+		return false;
+}
+
+void searchInventoryByAttribute(string attribute) {
 	int searchWord;
 	cout << "Search(make, model, year): "; 
 	cin >> searchWord;
+}
+
+void searchInventory(string att){
+
 }
 
 void sellCar() {

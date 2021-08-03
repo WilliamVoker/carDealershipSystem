@@ -4,7 +4,8 @@ class newCar : public car {
 public:
 	newCar();
 	void registerANonexistentCar();
-	//newCar(string model, string make, string warrantyProvider);
+	newCar(string warrantyProvider);
+	string setCategory();
 private:
 	string carWarrantyProvider;
 };

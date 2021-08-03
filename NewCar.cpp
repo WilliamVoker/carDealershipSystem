@@ -2,12 +2,19 @@
 
 newCar::newCar() {
 	this->carWarrantyProvider = "none";
-	this->setCategory("new");
 }
 
 void newCar::registerANonexistentCar(){
 	car::registerNonexistentCar();
 	askUserForWarrantyProvider(carWarrantyProvider);
+}
+
+newCar::newCar(string warrantyProvider) {
+	this->carWarrantyProvider = warrantyProvider;
+}
+
+string newCar::setCategory() {
+	return "new";
 }
 
 void askUserForWarrantyProvider(string wp) {
